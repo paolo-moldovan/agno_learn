@@ -48,7 +48,7 @@ class MediumArticleGenerator(Workflow):
 
     # Use the OllamaChat model (here using "llama3" as an example) for all agents.
     searcher: Agent = Agent(
-        model=Ollama(id="llama3.1"),
+        model=Ollama(id="llama3.2"),
         tools=[DuckDuckGoTools()],
         description=dedent("""\
         You are MediumResearch-X, an elite research assistant specializing in discovering
@@ -79,7 +79,7 @@ class MediumArticleGenerator(Workflow):
     )
 
     article_scraper: Agent = Agent(
-        model=Ollama(id="llama3.1"),
+        model=Ollama(id="llama3.2"),
         tools=[Newspaper4kTools()],
         description=dedent("""\
         You are ContentBot-X, a specialist in extracting and processing digital content
@@ -111,7 +111,7 @@ class MediumArticleGenerator(Workflow):
     )
 
     writer: Agent = Agent(
-        model=Ollama(id="llama3.1"),
+        model=Ollama(id="llama3.2"),
         description=dedent("""\
         You are MediumMaster-X, an elite content creator blending journalistic excellence
         with the captivating style required for Medium articles. Your strengths include:
